@@ -10,4 +10,3 @@ echo "Cleaning data on $my_server"
 curl "${my_server}/solr/jobs/update" -H "Content-Type: text/xml" --data-binary '<delete><query>*:*</query></delete>'
 curl "${my_server}/solr/jobs/update" --data '<commit/>'
 echo "Uploading data to ${my_server}"
-curl "${my_server}/solr/jobs/update?commit=true" -H "Content-Type: application/json" --data-binary @cleaned_backup.json
